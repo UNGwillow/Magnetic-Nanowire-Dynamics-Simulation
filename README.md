@@ -2,7 +2,7 @@
 
 ## 📝 Overview
 
-This MATLAB code simulates the 2D rotational alignment dynamics of magnetic nanowire fillers dispersed in a viscous fluid under an external magnetic field. Furthermore, it predicts the relative changes in the composite's effective conductivity/resistance and permittivity/capacitance based on the calculated alignment state using Effective Medium Theory (EMT). This simulation was developed to understand the working principle and predict the performance of magnetic field-responsive flexible sensors.
+This MATLAB code simulates the 2D rotational alignment dynamics of magnetic nanowire fillers dispersed in a viscous fluid under an external magnetic field. Furthermore, it predicts the relative changes in the composite's effective conductivity/resistance and permittivity/capacitance based on the calculated alignment state using Effective Medium Theory (EMT, Maxwell-Garnett type). This simulation was developed to understand the working principle and predict the performance of magnetic field-responsive flexible sensors.
 
 ## ✨ Key Features
 
