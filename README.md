@@ -1,8 +1,8 @@
-# Magnetic Nanowire Alignment Dynamics & EMT Property Prediction Simulation
+# Magnetic Nanorod Alignment Dynamics & EMT Property Prediction Simulation
 
 ## 📝 Overview
 
-This MATLAB code simulates the 2D rotational alignment dynamics of magnetic nanowire fillers dispersed in a viscous fluid under an external magnetic field. Furthermore, it predicts the relative changes in the composite's effective conductivity/resistance and permittivity/capacitance based on the calculated alignment state using Effective Medium Theory (EMT, Maxwell-Garnett type). This simulation was developed to understand the working principle and predict the performance of magnetic field-responsive flexible sensors.
+This MATLAB code simulates the 2D rotational alignment dynamics of magnetic nanorod fillers dispersed in a viscous fluid under an external magnetic field. Furthermore, it predicts the relative changes in the composite's effective conductivity/resistance and permittivity/capacitance based on the calculated alignment state using Effective Medium Theory (EMT, Maxwell-Garnett type). This simulation was developed to understand the working principle and predict the performance of magnetic field-responsive flexible sensors.
 
 ## ✨ Key Features
 
@@ -17,18 +17,18 @@ This MATLAB code simulates the 2D rotational alignment dynamics of magnetic nano
     * Calculates the order parameter ($S_2 = \langle \cos^2 \theta_{rel} \rangle$).
     * Predicts relative changes in conductivity/resistance and permittivity/capacitance compared to the random state (using linear interpolation approximation).
 * **Visualization:**
-    * Optional animation of the nanowire alignment process.
-    * Plot of individual nanowire angle changes over time.
+    * Optional animation of the nanorod alignment process.
+    * Plot of individual nanorod angle changes over time.
     * Plot of order parameter ($S_2$) and relative property changes over time.
     * Plot of relative property changes as a function of the order parameter ($S_2$).
 
 ## 📁 Code Structure
 
-* `nanowire_alignment_emt_simulation.m`: Main MATLAB script file.
+* `nanorod_alignment_emt_simulation.m`: Main MATLAB script file.
 
 ## 🚀 How to Use
 
-1.  Open the `nanowire_alignment_emt_simulation.m` script in your MATLAB environment.
+1.  Open the `nano_alignment_emt_simulation.m` script in your MATLAB environment.
 2.  Modify the values in the `User Input Parameters` section at the top of the script according to your actual experimental conditions and measurements/estimations.
     * Filler information (mol%, VSM value, dimensions, etc.)
     * Fabrication recipe (wt%)
