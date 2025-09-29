@@ -1,55 +1,65 @@
-# Magnetic Nanorod Alignment Dynamics & EMT Property Prediction Simulation
+# Magnetic Nanorod Dynamics & Permittivity Simulation
+
+A MATLAB script to simulate the alignment dynamics of magnetic nanorods and predict the resulting change in the composite's effective permittivity.
 
 ## 📝 Overview
 
-This MATLAB code simulates the 2D rotational alignment dynamics of magnetic nanorod fillers dispersed in a viscous fluid under an external magnetic field. Furthermore, it predicts the relative changes in the composite's effective conductivity/resistance and permittivity/capacitance based on the calculated alignment state using Effective Medium Theory (EMT, Maxwell-Garnett type). This simulation was developed to understand the working principle and predict the performance of magnetic field-responsive flexible sensors.
+This script simulates the 2D rotational alignment of magnetic nanorod fillers dispersed in a viscous fluid under an external magnetic field. It uses the **Langevin equation** to model the rotational dynamics of individual rods, considering both magnetic torque and thermal (Brownian) motion.
+
+Subsequently, it employs the **Effective Medium Theory (EMT)** to predict how the alignment of these rods affects the overall effective permittivity (and thus capacitance) of the composite material. This simulation was developed to understand the working principle and predict the performance of the magnetic field-responsive flexible sensor from our capstone design project.
 
 ## ✨ Key Features
 
-* **2D Rotational Dynamics Simulation:**
-    * Utilizes the Overdamped Langevin equation model.
-    * Considers magnetic torque, viscous drag torque, and Brownian motion torque.
-    * Applies the Euler-Maruyama numerical integration method.
-* **Effective Medium Theory (EMT) Application:**
-    * Calculates filler magnetic moment using Mol% and VSM data.
-    * Calculates filler volume fraction based on the Wt% recipe.
-    * Computes limit values (fully aligned/perpendicular) using Maxwell-Garnett (MG) type models.
-    * Calculates the order parameter ($S_2 = \langle \cos^2 \theta_{rel} \rangle$).
-    * Predicts relative changes in conductivity/resistance and permittivity/capacitance compared to the random state (using linear interpolation approximation).
-* **Visualization:**
-    * Optional animation of the nanorod alignment process.
-    * Plot of individual nanorod angle changes over time.
-    * Plot of order parameter ($S_2$) and relative property changes over time.
-    * Plot of relative property changes as a function of the order parameter ($S_2$).
-
-## 📁 Code Structure
-
-* `nanorod_alignment_emt_simulation.m`: Main MATLAB script file.
+- **Langevin Dynamics Simulation:** Models the time-dependent orientation of multiple nanorods using the Euler-Maruyama numerical method.
+    
+- **Effective Medium Theory (EMT):** Predicts the composite's effective permittivity based on filler properties and alignment state (S2​=⟨cos2θ⟩).
+    
+- **Lab-Based Parameters:** Easily calculates key simulation inputs (e.g., filler magnetic moment, volume fraction) directly from experimental data like `mol%`, `wt%`, and VSM values.
+    
+- **Configurable Outputs:** Includes a simple `DEBUG` flag to turn detailed command window printouts on or off.
+    
 
 ## 🚀 How to Use
 
-1.  Open the `nano_alignment_emt_simulation.m` script in your MATLAB environment.
-2.  Modify the values in the `User Input Parameters` section at the top of the script according to your actual experimental conditions and measurements/estimations.
-    * Filler information (mol%, VSM value, dimensions, etc.)
-    * Fabrication recipe (wt%)
-    * Simulation conditions (magnetic field, viscosity, temperature, time, etc.)
-    * Material properties for EMT calculation ($\sigma_m, \sigma_f, \epsilon'_m, \epsilon'_f$)
-3.  Run the script.
-4.  Result plots will be generated, and an animation may be displayed depending on the settings.
+1. **Clone the Repository:**
+    
+    Bash
+    
+    ```
+    git clone https://github.com/your-username/your-repo-name.git
+    ```
+    
+2. **Set Parameters:** Open the `.m` script in MATLAB. All user-configurable variables are located in the **`USER INPUT PARAMETERS`** section at the top of the file. Modify these values to match your specific materials and experimental conditions.
+    
+    Matlab
+    
+    ```
+    %% --- USER INPUT PARAMETERS ---
+    % ...
+    params.mol_Fe3O4 = 10;        % mol% of Fe3O4 on BTO fillers. 
+    params.sigma_s   = 4;         % Saturation magnetization of the filler (emu/g).
+    % ... and so on
+    ```
+    
+3. **Run the Script:** Run the script from the MATLAB editor or command window.
+    
 
-## 🔬 Model Details
+## 📊 Generated Outputs
 
-* **Dynamics:** Overdamped rotational Langevin equation, Euler-Maruyama method.
-* **EMT Limit Values:** Maxwell-Garnett (MG) type model (considering ellipsoidal depolarization factors).
-* **Intermediate State Approximation:** Linear interpolation based on the order parameter ($S_2$).
+Upon successful execution, the script will generate the following files in the project directory:
+
+- `plot_alignment_dynamics.png`: A plot showing the orientation angle of representative nanorods over time.
+    
+- `plot_capacitance_change.png`: A plot showing the predicted relative change in capacitance (%) over time, calculated relative to the initial random state.
+    
 
 ## 🔧 Dependencies
 
-* MATLAB (Tested version: R2023b)
+- MATLAB (tested on version R2021b and later).
+    
+- No special toolboxes are required; the script runs on a base installation of MATLAB.
+    
 
-## 🤝 Contributing
-
-This code was developed as part of a Capstone Design project. Suggestions for improvements or bug reports are always welcome.
 ## 📜 License
 
-This project is distributed under the [MIT License](LICENSE).
+This project is distributed under the [MIT License](https://www.google.com/search?q=LICENSE).
